@@ -97,12 +97,12 @@
             
         </p>
 
-
-
-        
-
     <form method = POST> {%csrf_token%}
-
+        {% if messages %}
+            {% for message in messages %}
+                <p class="mb-0" style="line-height: 22px; font-size: 15px; color: red;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
     
         {{ form }}
 

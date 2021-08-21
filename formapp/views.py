@@ -1,19 +1,14 @@
 from django.shortcuts import render
 from .forms import InfoForm
-# Create your views here.
-
+from django.contrib import messages
 
 
 def iForm(request):
-
-    iform = InfoForm(request.POST or None)
-    print(request.POST)
-    if iform.is_valid():
-        iform.save()
-        iform = InfoForm()
-        
-    context = {
-        'form':iform
-    }
-    
-    return render(request,'form.html',context)
+    if request.method == 'POST':
+        iform = InfoForm(request.POST or None)
+        if iform.is_valid():
+            messages.success(request, 'Contact info saved successfully')
+            iform.save()
+        else:
+            messages.error(request, 'All fields on contact form are required')
+    return render(request, 'form.html', {'form': InfoForm()})

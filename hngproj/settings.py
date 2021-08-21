@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #my apps
-    'formapp',
+    # my apps
+    'formapp.apps.FormappConfig',
 ]
 
 MIDDLEWARE = [
@@ -54,9 +54,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-
-        #third party
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # third party
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'hngproj.urls'

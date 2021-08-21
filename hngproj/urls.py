@@ -19,6 +19,6 @@ from formapp.views import iForm
 
 
 urlpatterns = [
-     path('form/', iForm, name='home'),
+    path('', iForm, name='home'),
     path('admin/', admin.site.urls),
 ]
